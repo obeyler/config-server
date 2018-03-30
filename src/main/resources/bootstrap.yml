@@ -1,0 +1,17 @@
+management:
+  context-path: /manage
+endpoints:
+  enabled: true
+spring:
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+          uri: https://github.com/obeyler/config.git
+ #         basedir: /tmp/config-server/git
+          clone-on-start: true
+          timeout: 10000
+        prefix: /config
+server:
+  port: 8088
